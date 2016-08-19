@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- http://www.hamleys.com/images/_lib/connect-4-grid-10222-0-1417083604000.jpg -->
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+
+	<style>
+
+		html {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			margin: 0;
+			padding: 50px;
+			background-color: #f5f5f5;
+			font-family: Helvetica, Verdana, Arial, sans-serif;
+		}
+
+		#content {
+			width: 1150px;
+			background-color: #fff;
+			min-height: 500px;
+			margin: 0 auto;
+			padding: 50px;
+		}
+
+		ul#grid {
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			display: flex;
+			align-items: stretch;
+			flex-wrap: wrap;
+			flex-direction: row;
+			justify-content: space-between;
+			position: relative;
+		}
+
+		ul#grid::before {
+			content: "";
+			position: absolute;
+			width: 30px;
+			height: 100%;
+			background-color: navy;
+			top: 0;
+			left: -30px;
+			border-radius: 2px 0 0 0;
+		}
+
+		ul#grid::after {
+			content: "";
+			position: absolute;
+			width: 30px;
+			height: 100%;
+			background-color: navy;
+			top: 0;
+			right: -30px;
+			border-radius: 0 2px 0 0;
+		}
+
+		ul#grid li {
+			width: 150px;
+			height: 150px;
+			flex-grow: 1;
+			align-self: stretch;
+			display: inline-block;
+			/*border-width: 1px 1px 0 0;
+			border-style: solid;
+			border-color: blue;*/
+			position: relative;
+			/*background-color: dodgerblue;*/
+			
+			overflow: hidden;
+
+		}
+
+		/*ul#grid li:nth-of-type(7n + 1) {
+			border-left-width: 1px;
+		}*/
+
+		ul#grid li::before{
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			box-shadow: 0px 0px 0px 60px dodgerblue;
+			z-index: 100;
+		}
+
+		ul#grid li::after{
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			box-shadow: 0px 0px 0px 60px dodgerblue;
+			border: 3px solid blue;
+			z-index: 100;
+			box-shadow: 10px -10px 0 0 navy;
+		}
+
+		.disc {
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			background-color: tomato;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			-moz-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			-o-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			animation: drop 1s;
+			box-shadow: inset 10px -10px 0 0 red;
+			/*background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAALElEQVQIW2P8n+z+nwEE5u4EU4xgASiHIdmdgfE/AwNERbI7VAVIAMoBqQQARggPUUjCRBgAAAAASUVORK5CYII=) repeat;*/
+		}
+
+		@keyframes  drop {
+			0% {
+				top: -200%;
+			}
+			100% {
+				top: 50%;
+			}
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<!-- Main content -->
+	<div id="content">
+
+		<!-- Grid -->
+		<ul id="grid">
+
+			<!-- Row 1 -->
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+
+			<!-- Row 2 -->
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+
+			<!-- Row 3 -->
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+
+
+			<!-- Row 4 -->
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+
+			<!-- Row 5 -->
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+
+			<!-- Row 6 -->
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+
+		</ul>
+	</div> <!-- /Main content -->
+
+
+
+	<script>
+		$('ul#grid li').html('<div class="disc"></div>');
+	</script>
+
+</body>
+</html>
