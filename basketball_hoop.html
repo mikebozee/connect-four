@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+
+	<style>
+
+		html {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			margin: 0;
+			padding: 50px;
+			background-color: #f5f5f5;
+			font-family: Helvetica, Verdana, Arial, sans-serif;
+		}
+
+		#content {
+			width: 1150px;
+			background-color: #fff;
+			min-height: 500px;
+			margin: 0 auto;
+			padding: 50px;
+		}
+
+		ul#grid {
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			display: flex;
+			align-items: stretch;
+			flex-wrap: wrap;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		ul#grid li {
+			width: 150px;
+			height: 150px;
+			flex-grow: 1;
+			align-self: stretch;
+			display: inline-block;
+			border-width: 1px 1px 0 0;
+			border-style: solid;
+			border-color: blue;
+			position: relative;
+			background-color: dodgerblue;
+			-webkit-clip-path: polygon(0 100%, 0 0, 100% 0, 80% 100%);
+  clip-path: polygon(0 100%, 0 0, 100% 0, 80% 100%);
+		}
+
+		ul#grid li:nth-of-type(7n + 1) {
+			border-left-width: 1px;
+		}
+
+		.disc-ring {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			background-color: tomato;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			-moz-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			-o-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			z-index: 100;
+			border: 2px groove blue;
+			animation: drop 1s;
+		}
+
+		.disc {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			background-color: tomato;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			-moz-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			-o-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			z-index: 100;
+			border: 2px groove blue;
+			animation: drop 1s;
+		}
+
+		@keyframes  drop {
+			0% {
+				top: -200%;
+			}
+			100% {
+				top: 50%;
+			}
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<!-- Main content -->
+	<div id="content">
+
+		<!-- Grid -->
+		<ul id="grid">
+
+			<!-- Row 1 -->
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+
+			<!-- Row 2 -->
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+
+			<!-- Row 3 -->
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+
+
+			<!-- Row 4 -->
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+
+			<!-- Row 5 -->
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+
+			<!-- Row 6 -->
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+
+		</ul>
+	</div> <!-- /Main content -->
+
+
+
+	<script>
+		$('ul#grid li').html('<div class="disc"></div>');
+	</script>
+
+</body>
+</html>
